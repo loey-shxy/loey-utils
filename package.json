@@ -1,0 +1,44 @@
+{
+  "name": "utils",
+  "version": "1.0.1",
+  "description": "my own utils",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "type": "module",
+  "scripts": {
+    "build": "rimraf -rf ./lib && rollup --config"
+  },
+  "keywords": [],
+  "author": "loey",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-classes": "^7.21.0",
+    "@babel/plugin-transform-runtime": "^7.22.4",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.21.5",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/node": "^20.2.5",
+    "browserify": "^17.0.0",
+    "esbuild": "^0.17.19",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-serve": "^2.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tslib": "^2.5.2",
+    "typescript": "^5.0.4"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.22.3"
+  }
+}
