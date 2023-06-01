@@ -5,6 +5,13 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.esm.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "rimraf -rf ./lib && rollup --config"
   },
@@ -36,7 +43,8 @@
     "typescript": "^5.0.4"
   },
   "files": [
-    "lib"
+    "lib",
+    "*.d.ts"
   ],
   "dependencies": {
     "@babel/runtime": "^7.22.3"
