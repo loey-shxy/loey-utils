@@ -36,7 +36,6 @@ const rollupConfig = {
   // external: ['lodash'], // 指出应将哪些模块视为外部模块，如 Peer dependencies 中的依赖
   // plugins 需要注意引用顺序
   plugins: [
-
     // 使得 rollup 支持 commonjs 规范，识别 commonjs 规范的依赖
     commonjs(),
 

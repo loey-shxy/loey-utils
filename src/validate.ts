@@ -3,8 +3,8 @@
  * @param str
  * @return {boolean}
  */
-export const isNumber = (str: string) => {
-  return /^\d+$/.test(str)
+export const isNumber = (str: string | number) => {
+  return /^\d+$/.test(str+'')
 }
 
 /**
@@ -29,83 +29,53 @@ export const isArray = (value: any) => {
 
 /**
  * @description 验证字母中文数字
- * @param value 
- * @param callback 
- * @returns 
+ * @param value
+ * @returns {boolean}
  */
-export const letterNumberChinese = (rule: any, value: any, callback: Function) => {
-  if (!value) {
-    callback()
-    return
-  }
+export const letterNumberChinese = (value: any) => {
 
   const reg = /^[\u0391-\uFFE5A-Za-z0-9]+$/
-  if (!reg.test(value)) {
-    callback(new Error('请输入英文字母、数字、汉字'))
-  } else { 
-    callback()
-  }
+  return reg.test(value)
 }
 
 /**
  * @description 验证英文数字
- * @param value 
- * @param callback 
- * @returns 
+ * @param value
+ * @returns {boolean}
  */
-export const letterNumber = (rule: any, value: any, callback: Function) => {
-  if (!value) {
-    callback()
-    return
-  }
-
-  const reg = /^[A-Za-z0-9]\d*$/
-  if (!reg.test(value)) {
-    callback(new Error('请输入英文字母、数字'))
-  } else {
-    callback()
-  }
+export const letterNumber = (value: any) => {
+  const reg = /[A-Za-z0-9]$/
+  return reg.test(value)
 }
 
 /**
  * @description 验证正整数
+ * @param value
+ * @returns {boolean}
  */
-export const validateInteger = (rule: any, value: any, callback: Function) => {
-  if (!value) {
-    callback()
-    return
-  }
-
+export const validateInteger = (value: any) => {
   const reg = /^[1-9]\d*$/
-  if (!reg.test(value)) {
-    callback(new Error('请输入正整数'))
-  } else {
-    callback()
-  }
+  return reg.test(value)
 }
 
 /**
  * @description 验证经度
+ * @param value
+ * @returns {boolean}
  */
-export const validateLng = (rule: any, value: any, callback: Function) => {
+export const validateLng = (value: any) => {
   const reg = /^[-+]?(0(\.\d{1,15})?|([1-9](\d)?)(\.\d{1,15})?|1[0-7]\d{1}(\.\d{1,15})?|180(\.0{1,15})?)$/
 
-  if (value != '' && !reg.test(value)) {
-    callback(new Error('请输入正确经度数值,-180至180之间'))
-  } else {
-    callback()
-  }
+  return value != '' && reg.test(value)
 }
 
 /**
  * @description 验证纬度
+ * @param value
+ * @returns {boolean}
  */
-export const validateLat = (rule: any, value: any, callback: Function) => {
+export const validateLat = (value: any) => {
   const reg = /^[-+]?((0|\d{1}|([1-8]\d?))(\.\d{1,15})?|90(\.0{1,15})?)$/
 
-  if (value != '' && !reg.test(value)) {
-    callback(new Error('请输入正确的纬度,-90至90之间'))
-  } else {
-    callback()
-  }
+  return value != '' && reg.test(value)
 }
