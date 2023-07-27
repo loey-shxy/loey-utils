@@ -1,6 +1,6 @@
 import assert from 'assert'
 
-import {Validate} from '../src'
+import {Validate, Utils} from '../src/utils'
 
 describe('validate', () => {
   describe('Validate.isNumber', () => {
@@ -12,6 +12,12 @@ describe('validate', () => {
   describe('Validate.letterNumber', () => {
     test('true', () => {
       assert.strictEqual(Validate.letterNumber('122ss'), true)
+    })
+  })
+
+  describe('Utils.numberFixed', () => {
+    test('true', () => {
+      assert.strictEqual(Utils.numberFixed(0.5254), 0.52)
     })
   })
 })

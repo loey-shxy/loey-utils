@@ -8,7 +8,7 @@ export const preFixInt = (number: number) => {
 }
 
 /**
- * @description 保留小数
+ * @description 四舍五入保留fixed位小数
  * @param {number} number 
  * @param {number} fixed 
  * @returns {number}
@@ -22,7 +22,7 @@ export const numberFixed = (number: number, fixed = 2) => {
     return Math.floor(number)
   }
 
-  return Number(number.toFixed(fixed))
+  return Math.round(number * Math.pow(10, fixed)) / Math.pow(10, fixed)
 }
 
 /**

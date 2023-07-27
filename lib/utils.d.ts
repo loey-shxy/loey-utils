@@ -5,7 +5,7 @@
  */
 export declare const preFixInt: (number: number) => string;
 /**
- * @description 保留小数
+ * @description 四舍五入保留fixed位小数
  * @param {number} number
  * @param {number} fixed
  * @returns {number}
