@@ -79,3 +79,33 @@ export const validateLat = (value: any) => {
 
   return value != '' && reg.test(value)
 }
+
+/**
+ * @description 验证车牌号
+ * @param value 
+ * @returns 
+ */
+export const validatePlateNum = (value: string) => {
+  const reg = /^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4,5}[A-HJ-NP-Z0-9挂学警港澳]{1})$/
+  return reg.test(value)
+}
+
+/**
+ * @description 验证身份证号
+ * @param value 
+ * @returns 
+ */
+export const validateIdCard = (value: string) => {
+  const reg = /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
+  return reg.test(value)
+}
+
+/**
+ * @description 验证邮箱
+ * @param value 
+ * @returns 
+ */
+export const validateEmail = (value: string) => {
+  const reg = /[\w.~!@#$%^&*()]+@[\w.]+[\w]+/
+  return reg.test(value)
+}

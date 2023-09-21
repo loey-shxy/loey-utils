@@ -46,3 +46,21 @@ export declare const validateLng: (value: any) => boolean;
  * @returns {boolean}
  */
 export declare const validateLat: (value: any) => boolean;
+/**
+ * @description 验证车牌号
+ * @param value
+ * @returns
+ */
+export declare const validatePlateNum: (value: string) => boolean;
+/**
+ * @description 验证身份证号
+ * @param value
+ * @returns
+ */
+export declare const validateIdCard: (value: string) => boolean;
+/**
+ * @description 验证邮箱
+ * @param value
+ * @returns
+ */
+export declare const validateEmail: (value: string) => boolean;

@@ -12,3 +12,15 @@ export const exchangeDateTime = (startDateTime: number | string | Date, endDateT
   }
   return [startDateTime, endDateTime]
 }
+
+/**
+ * @description 获取当前日期是当月的第几周
+ * @param date 
+ * @returns 
+ */
+export const getMonthWeek = (date: string) => {
+  const currentDay = new Date(date)
+  const theSaturday = currentDay.getDate() + (6 - currentDay.getDay()) 
+  
+  return Math.ceil(theSaturday / 7)
+}
