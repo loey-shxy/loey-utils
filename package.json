@@ -52,6 +52,7 @@
     "*.d.ts"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.22.3"
+    "@babel/runtime": "^7.22.3",
+    "mqtt": "^5.0.5"
   }
 }
