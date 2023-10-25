@@ -109,3 +109,57 @@ export const validateEmail = (value: string) => {
   const reg = /[\w.~!@#$%^&*()]+@[\w.]+[\w]+/
   return reg.test(value)
 }
+
+/**
+ * @description 验证只能输入-、字母、数字、中文
+ * @param value 
+ * @returns 
+ */
+export const validateCenterlineLetterNumberChinese = (value: string) => {
+  return /^[-A-Za-z0-9\u4e00-\u9fa5]+$/.test(value)
+}
+
+/**
+ * @description 验证只能输入_、字母、数字、中文
+ * @param value 
+ * @returns 
+ */
+export const validateUnderlineLetterNumberChinese = (value: string) => {
+  return /^[_A-Za-z0-9\u4e00-\u9fa5]+$/.test(value)
+}
+
+/**
+ * @description 验证必须有一位数字和字母
+ * @param value 
+ * @returns 
+ */
+export const validateLetterAndNumber = (value: string) => {
+  return /^(?![^a-zA-Z]+$)(?!\D+$)/.test(value)
+}
+
+/**
+ * @description 验证ip地址
+ * @param value 
+ * @returns 
+ */
+export const validateIp = (value: string) => {
+  return /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/.test(value)
+}
+
+/**
+ * @description 验证手机号码
+ * @param value 
+ * @returns 
+ */
+export const validatePhone = (value: string) => {
+  return /^1[3,4,5,7,8][0-9]{9}$/.test(value)
+}
+
+/**
+ * @description 验证前后空格
+ * @param value 
+ * @returns 
+ */
+export const validatePreAndAfterSpace = (value: string) => {
+  return /^\s+|\s+$/g.test(value)
+}

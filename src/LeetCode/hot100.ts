@@ -134,3 +134,50 @@ const threeSum = (nums: number[]): number[][] => {
 
   return result
 }
+
+/**
+ * @description 无重复最长子串长度
+ * @param s 
+ * @returns 
+ */
+const lengthOfLongestSubstring = (s: string): number => {
+  if (!s.length) return 0
+  const set = new Set()
+  const len = s.length
+  let l = 0, r = 0, maxlength = 0
+  for (r; r < len; r++) {
+    // 当前元素不在set中，就加入set，然后更新最大长度，r++继续下一轮循环
+    if (!set.has(s[r])) {
+      set.add(s[r])
+      maxlength = Math.max(maxlength, set.size)
+    } else {
+      // set 中有重复元素，不断让l++，并删除窗口之外的元素，直到滑动到窗口内没有重复的元素
+      while(set.has(s[r])) {
+        set.delete(s[l])
+        l++
+      }
+      set.add(s[r])
+    }
+  }
+  return maxlength
+}
+
+/**
+ * 是否存在重复元素
+ * @param nums 
+ * @param k 
+ * @returns 
+ */
+const containsNearbyDuplicate = (nums: number[] | string[], k: number) => {
+  const set = new Set()
+  for (let i = 0; i < nums.length; i++) {
+    if (set.has(nums[i])) {
+      return true
+    }
+    set.add(nums[i])
+    if (set.size > k) {
+      set.delete(nums[i - k])
+    }
+  }
+  return false
+}
